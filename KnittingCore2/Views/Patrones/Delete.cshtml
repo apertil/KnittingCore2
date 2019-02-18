@@ -1,0 +1,75 @@
+﻿@model KnittingCore2.Models.Patrones
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Patrones</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombrePatron)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NombrePatron)
+        </dd>
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Patron)
+        </dt>*@
+        @*<dd>
+            @Html.DisplayFor(model => model.Patron)
+        </dd>*@
+        <dt>
+            @Html.DisplayNameFor(model => model.AutorPatron)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AutorPatron.NombreAutor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GeneroEdad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GeneroEdad.GenEdad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Lanas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Lanas.NombreLana)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Prendas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Prendas.NombrePrendas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Revistas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Revistas.NombreRevista)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TiposCaracteristicas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TiposCaracteristicas.NombreCaracteristicas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TiposDeTejer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TiposDeTejer.NombreDeTejer)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdNombrePatron" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

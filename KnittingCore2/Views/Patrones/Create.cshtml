@@ -1,0 +1,108 @@
+﻿@model KnittingCore2.Models.Patrones
+
+@{
+    ViewData["Title"] = "Nuevo Patrón";
+}
+
+<h2>Nuevo patrón</h2>
+<h4>The Knitting Project</h4>
+<hr />
+<div class="row form-border">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="container col-lg-6">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="NombrePatron" class="control-label" , htmlAttributes: new { @style="max-width:150px" }></label>
+                        <input asp-for="NombrePatron" class="form-control" />
+                        <span asp-validation-for="NombrePatron" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="IdAutorPatron" class="control-label" , htmlAttributes: new { @style="max-width:150px" }></label>
+                        <select asp-for="IdAutorPatron" class="form-control" asp-items="ViewBag.IdAutorPatron"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="IdLana" class="control-label" , htmlAttributes: new { @style="max-width:150px" }></label>
+                        <select asp-for="IdLana" class="form-control" asp-items="ViewBag.IdLana"></select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="IdPrendas" class="control-label" , htmlAttributes: new { @style="max-width:150px" }></label>
+                        <select asp-for="IdPrendas" class="form-control" asp-items="ViewBag.IdPrendas"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="IdRevistas" class="control-label"></label>
+                        <select asp-for="IdRevistas" class="form-control" asp-items="ViewBag.IdRevistas"></select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="IdTiposCaract" class="control-label"></label>
+                        <select asp-for="IdTiposCaract" class="form-control" asp-items="ViewBag.IdTiposCaract"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="IdTiposdeTejer" class="control-label"></label>
+                        <select asp-for="IdTiposdeTejer" class="form-control" asp-items="ViewBag.IdTiposdeTejer"></select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="IdGenEdad" class="control-label"></label>
+                        <select asp-for="IdGenEdad" class="form-control" asp-items="ViewBag.IdGenEdad"></select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Patron" class="control-label"></label>
+                        @*<input type="file" value="Buscar" class="btn btn-info" />*@
+                        <input asp-for="Patron" type="file" accept="application/pdf" class="form-control" />
+                        @*<span asp-validation-for="Patron" class="text-left"></span>*@
+                    </div>
+                </div>
+            </div>
+            @*********************************************************@
+
+            <div class="row">
+                <div class="col-md-6">
+                    <br />
+                    <div class="form-group">
+                        <input type="submit" value="Crear" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </form>
+    <div class="container col-lg-6">
+        <div class="row">
+            <img src="~/images/Foto3.jpg" class="img-responsive center-block" />
+        </div>
+    </div>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+   </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

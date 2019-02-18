@@ -1,0 +1,83 @@
+﻿@model IEnumerable<KnittingCore2.Models.Patrones>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h2>Index</h2>
+
+<p>
+    @*<a asp-action="Create">Nuevo Patrón</a>*@
+    <a class=" btn btn-default" asp-controller="Patrones" asp-action="Create">Crear Nuevo Patron</a>
+</p>
+<div class="row form-border">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NombrePatron)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Patron)
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.AutorPatron)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GeneroEdad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Lanas)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Prendas)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Revistas)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TiposCaracteristicas)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TiposDeTejer)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombrePatron)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AutorPatron.NombreAutor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GeneroEdad.GenEdad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Lanas.NombreLana)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Prendas.NombrePrendas)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Revistas.NombreRevista)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TiposCaracteristicas.NombreCaracteristicas)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TiposDeTejer.NombreDeTejer)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IdNombrePatron">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.IdNombrePatron">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.IdNombrePatron">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

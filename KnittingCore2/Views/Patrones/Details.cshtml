@@ -1,0 +1,72 @@
+﻿@model KnittingCore2.Models.Patrones
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Patrones</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombrePatron)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NombrePatron)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Patron)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Patron)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AutorPatron)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AutorPatron.IdAutorPatron)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GeneroEdad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GeneroEdad.IdGenEd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Lanas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Lanas.IdLana)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Prendas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Prendas.IdPrendas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Revistas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Revistas.IdRevistas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TiposCaracteristicas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TiposCaracteristicas.IdTiposCaract)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TiposDeTejer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TiposDeTejer.NombreDeTejer)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdNombrePatron">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
